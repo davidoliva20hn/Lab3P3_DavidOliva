@@ -1,19 +1,81 @@
-// Lab3P3_DavidOliva.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
+﻿#include <iostream>
+#include <vector>
+#include <locale>
+#include <cstdlib>
+#include <stdio.h>      
+#include <stdlib.h>    
+#include <time.h>  
+using namespace std;
+int ElecciónIntercalada(vector <int> Vector,int Entrar) {
+	int Valor = ElecciónIntercalada(Vector);
+	if (Entrar) {
+		Entrar = 0;
+		return 1;
+	}
+	if (Vector.size()-1 == 0) {
 
-#include <iostream>
-
-int main()
-{
-    std::cout << "Hello World!\n";
+	}
+	else if (Valor ==1){
+		int Contador = 0;
+		for (size_t i = 0; i < ; i++) {
+			Vector.erase(Vector.begin()+Contador);
+			Contador++;
+		}
+		return 2;
+	}
+	else if (Valor ==2) {
+		int Contador = 0;
+		for (size_t i = 0; i < Vector; i++) {
+			Vector.erase(Vector.begin() + Contador);
+			Contador++;
+		}
+		return 1;
+	}
 }
+void ejercicio1() {
+	cout << "El último sobreviviente." << endl << endl;
+	cout << "Ingrese el tamaño del vector:";
+	int TamañoVector;
+	cin >> TamañoVector;
+	vector <int> ListaVectores;
+	for (size_t i = 0; i < TamañoVector; i++){
+		int NumeroAleatorio= 1 + rand() % 10;;
+		ListaVectores.push_back(NumeroAleatorio);
+	}
+	for (int i = 0; i < TamañoVector; i++) {
+		cout << (i == 0 ? "Vector generado : [" : "") << " " << ListaVectores[i] << (i == TamañoVector-1 ? "]\n" : "");
+	}
 
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
+	cout << "Último sobreviviente : [" << "]";
+}
+void ejercicio2() {
 
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
+}
+void menu() {
+	int OpcionesMenu = 0;
+	do {
+		setlocale(LC_ALL, "Spanish");
+		cout << "---- Menú ----" << "\n";
+		cout << "1. El último sobreviviente" << "\n" << "2. Operaciones con puntos." << "\n" << "3. Salir" << "\n" << "\n";
+		cout << "Ingrese la opción que desea realizar:";
+		cin >> OpcionesMenu;
+		switch (OpcionesMenu) {
+		case 1:
+			ejercicio1();
+			break;
+		case 2:
+			ejercicio1();
+			break;
+		case 3:
+			cout << " ";
+			break;
+		default:
+			cout << endl << "Opción incorrecta Vuelve a Intentar." << endl << endl;
+			break;
+		}
+	} while (OpcionesMenu != 3);
+}
+int main() {
+	menu();
+	return 0;
+}
