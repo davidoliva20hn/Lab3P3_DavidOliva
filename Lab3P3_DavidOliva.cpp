@@ -6,12 +6,17 @@
 #include <stdlib.h>    
 #include <time.h>  
 using namespace std;
+// este código imprime el vector poniendo un corchete al principio y al final.
 void ImprimirVector(vector <int> Vector) {
 	for (int i = 0; i < Vector.size(); i++) {
 		cout << (i == 0 ? "[" : "") << " " << Vector[i] << (i == Vector.size() - 1 ? " ]\n" : "");
 	}
 }
+/*
+* este código recurcivo elimina elementos de vector Intercalada mente sumando un cunado va de derecha a izquierda y restado 2  izquierda a derecha 
+*/
 int ElecciónIntercalada(vector <int> Vector, int Entrar, int Valor, int Detener) {
+	// este if else busca si el tamaño del vector es par o impar.
 	if (Vector.size() % 2 == 1) {
 		Detener = (Vector.size() / 2) + 1;
 	}
@@ -62,8 +67,7 @@ void ejercicio1() {
 	cout << "Ingrese el tamaño del vector:";
 	int TamañoVector;
 	cin >> TamañoVector;
-	while (TamañoVector < 5 || TamañoVector >15)
-	{
+	while (TamañoVector < 5 || TamañoVector >15){ // este while valida si el tamaño esta en le rango de 5 al 15 
 		cout << "El valor esta fuera de rango." << "\n";
 		cout << "Ingrese el tamaño del vector:";
 		cin >> TamañoVector;
